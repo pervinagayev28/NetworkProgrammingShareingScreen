@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "2v83tXZCBa7ayEp1H6r2xGQLN72I8uShe4cncW2sGB7YDN1c4mvNzwDvAfVUmEn1NrJF+A1bep2RHgGQoOL94A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\user\\Desktop\\screeeSharing\\ServerAppConsole\\ServerAppConsole.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.win32.systemevents\\8.0.0\\microsoft.win32.systemevents.8.0.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\system.drawing.common\\8.0.2\\system.drawing.common.8.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

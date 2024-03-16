@@ -1,0 +1,37 @@
+﻿<div style="display: flex; flex-direction: column; align-items: center; height: 100vh;">
+    <button onclick="startButtonClicked()" style="height: 40px; width: 300px; margin-bottom: 50px;">start</button>
+    <div style="flex: 1; width: 100%; display: flex; justify-content: center;">
+        <canvas id="canvas" style="border: 1px solid black;"></canvas>
+    </div>
+</div>
+
+
+<script>
+    async function startButtonClicked() {
+        while (true) {
+            console.log("start");
+            var response = await fetch("api/Udp/send", {
+                method: "GET"
+            });
+            if (response.ok) {
+                var imageData = await response.blob();
+                displayImage(imageData);
+            } else {
+                console.error("İstek başarısız:", response.status);
+            }
+        }
+    }
+
+    function displayImage(imageData) {
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+
+        var img = new Image();
+        img.onload = function () {
+            canvas.width = img.width;
+            canvas.height = img.height;
+            ctx.drawImage(img, 0, 0);
+        };
+        img.src = URL.createObjectURL(imageData);
+    }
+</script>

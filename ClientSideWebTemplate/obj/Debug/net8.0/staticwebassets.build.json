@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "JyF93HhW6fG0hEgTDB1GecJbrixvMVtxu9dNv9NGBV0=",
+  "Source": "ClientSideWebTemplate",
+  "BasePath": "_content/ClientSideWebTemplate",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

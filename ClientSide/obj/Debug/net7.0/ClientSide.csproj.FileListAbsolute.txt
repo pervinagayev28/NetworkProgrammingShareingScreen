@@ -1,0 +1,14 @@
+C:\Users\user\OneDrive\Desktop\NetworkPractic\ClientSide\bin\Debug\net7.0\ClientSide.exe
+C:\Users\user\OneDrive\Desktop\NetworkPractic\ClientSide\bin\Debug\net7.0\ClientSide.deps.json
+C:\Users\user\OneDrive\Desktop\NetworkPractic\ClientSide\bin\Debug\net7.0\ClientSide.runtimeconfig.json
+C:\Users\user\OneDrive\Desktop\NetworkPractic\ClientSide\bin\Debug\net7.0\ClientSide.dll
+C:\Users\user\OneDrive\Desktop\NetworkPractic\ClientSide\bin\Debug\net7.0\ClientSide.pdb
+C:\Users\user\OneDrive\Desktop\NetworkPractic\ClientSide\obj\Debug\net7.0\ClientSide.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\OneDrive\Desktop\NetworkPractic\ClientSide\obj\Debug\net7.0\ClientSide.AssemblyInfoInputs.cache
+C:\Users\user\OneDrive\Desktop\NetworkPractic\ClientSide\obj\Debug\net7.0\ClientSide.AssemblyInfo.cs
+C:\Users\user\OneDrive\Desktop\NetworkPractic\ClientSide\obj\Debug\net7.0\ClientSide.csproj.CoreCompileInputs.cache
+C:\Users\user\OneDrive\Desktop\NetworkPractic\ClientSide\obj\Debug\net7.0\ClientSide.dll
+C:\Users\user\OneDrive\Desktop\NetworkPractic\ClientSide\obj\Debug\net7.0\refint\ClientSide.dll
+C:\Users\user\OneDrive\Desktop\NetworkPractic\ClientSide\obj\Debug\net7.0\ClientSide.pdb
+C:\Users\user\OneDrive\Desktop\NetworkPractic\ClientSide\obj\Debug\net7.0\ClientSide.genruntimeconfig.cache
+C:\Users\user\OneDrive\Desktop\NetworkPractic\ClientSide\obj\Debug\net7.0\ref\ClientSide.dll

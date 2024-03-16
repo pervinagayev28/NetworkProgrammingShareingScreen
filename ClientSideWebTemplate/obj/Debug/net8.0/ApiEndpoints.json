@@ -1,0 +1,64 @@
+[
+  {
+    "ContainingType": "ClientSideWebTemplate.Controllers.UdpController",
+    "Method": "InitializerUdp",
+    "RelativePath": "api/Udp",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ClientSideWebTemplate.Controllers.UdpController",
+    "Method": "Convert",
+    "RelativePath": "api/Udp",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "buffer",
+        "Type": "System.Byte[]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Drawing.Image",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ClientSideWebTemplate.Controllers.UdpController",
+    "Method": "GetImage",
+    "RelativePath": "api/Udp/send",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Byte[]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

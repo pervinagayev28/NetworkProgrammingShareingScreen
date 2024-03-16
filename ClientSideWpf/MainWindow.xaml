@@ -1,0 +1,22 @@
+﻿<Window x:Class="ClientSideWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClientSideWpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Visibility="Hidden" x:Name="mainPanel" Margin="0,20">
+            <TextBox Height="40" Text="Who?" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" Name="txtbox" Width="400" />
+            <Button  Height="100" Width="400" Content="Start Shareing Scree" FontSize="30" Click="Clicked" x:Name="btn"/>
+            <!--<MediaElement Height="400" Width="500" Name="img" Visibility="Visible"/>-->
+            <Image Name="img" Visibility="Visible"/>
+        </StackPanel>
+        <StackPanel x:Name="enterancePanel" VerticalAlignment="Center">
+            <Label FontSize="20" Height="40" BorderThickness="0" Content="Enter Remote Name" HorizontalContentAlignment="Center"/>
+            <TextBox Height="40"  FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" Name="txtbox_enterance" Width="400" />
+            <Button  Height="100" Width="400" Content="Log in " FontSize="30" Click="Clicked_enterance" x:Name="btn_enterance"/>
+        </StackPanel>
+    </Grid>
+</Window>
