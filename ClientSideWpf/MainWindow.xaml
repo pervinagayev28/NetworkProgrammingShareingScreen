@@ -11,7 +11,7 @@
             <TextBox Height="40" Text="Who?" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" Name="txtbox" Width="400" />
             <Button  Height="100" Width="400" Content="Start Shareing Scree" FontSize="30" Click="Clicked" x:Name="btn"/>
             <!--<MediaElement Height="400" Width="500" Name="img" Visibility="Visible"/>-->
-            <Image Name="img" Visibility="Visible"/>
+            <Image Height="250" Width="500" Margin="10" Name="img" Visibility="Visible"/>
         </StackPanel>
         <StackPanel x:Name="enterancePanel" VerticalAlignment="Center">
             <Label FontSize="20" Height="40" BorderThickness="0" Content="Enter Remote Name" HorizontalContentAlignment="Center"/>

@@ -12,6 +12,8 @@ using System.Windows.Shapes;
 using System.IO;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Windows.Controls;
+
 
 
 namespace ClientSideWpf
@@ -36,8 +38,8 @@ namespace ClientSideWpf
         public MainWindow()
         {
             InitializeComponent();
-            remoteep = new IPEndPoint(IPAddress.Parse("192.168.100.9"), 27000);
-            client = new UdpClient("192.168.100.9",0);
+            remoteep = new IPEndPoint(IPAddress.Parse("192.168.100.15"), 45001);
+            client = new UdpClient();
             DataContext = this;
         }
 
@@ -48,35 +50,67 @@ namespace ClientSideWpf
                 btn.IsEnabled = true;
             else
                 return;
-            btn.Visibility = Visibility.Hidden;
-            img.Visibility = Visibility.Visible;
-            var buffer = new byte[ushort.MaxValue - 29];
+
+            //sending remote name
             await client.SendAsync(Encoding.UTF8.GetBytes(txtbox.Text), remoteep);
-            int maxlen = buffer.Length;
-            int len = 0;
-            var list = new List<byte>();
-            while (true)
+            new Thread(async () =>
             {
-                try
+                while (true)
                 {
-                    do
+                    var imgStream = captureScreenAsync();
+                    var chunks = imgStream.ToArray().Chunk(ushort.MaxValue - 29).ToList();
+                    foreach (var item in chunks)
+                        try { await client.SendAsync(item, item.Length, remoteep); } catch (Exception e) { MessageBox.Show(e.Message); };
+                }
+            }).Start();
+
+
+            new Thread(async () =>
+            {
+
+                var buffer = new byte[ushort.MaxValue - 29];
+                int maxlen = buffer.Length;
+                int len = 0;
+                var list = new List<byte>();
+                while (true)
+                {
+                    try
                     {
-                        var result = await client.ReceiveAsync();
-                        buffer = result.Buffer;
-                        len = buffer.Length;
-                        list.AddRange(buffer);
-                    } while (len == maxlen);
-                    img.Source = Convert(list.ToArray());
-                    list.Clear();
+                        do
+                        {
+                            var result = client.Receive(ref remoteep);
+                            MessageBox.Show("recives client");
+                            buffer = result;
+                            len = buffer.Length;
+                            list.AddRange(buffer);
+                        } while (len == maxlen);
+                        File.AppendAllText("footest.txt", $"recives\n");
+                        img.Source = Convert(list.ToArray());
+                        list.Clear();
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                 }
-                catch (Exception)
-                {
-                }
-            }
+            }).Start();
+
         }
 
+        MemoryStream? captureScreenAsync()
+        {
+            using (Bitmap? bitmap = new Bitmap(1920, 1080))
+            {
+                using (Graphics gr = Graphics.FromImage(bitmap))
+                    gr?.CopyFromScreen(0, 0, 0, 0, new System.Drawing.Size(1920, 1080));
+                using (MemoryStream memoryStream = new MemoryStream())
+                {
+                    bitmap?.Save(memoryStream, ImageFormat.Jpeg);
+                    return memoryStream;
+                }
+            }
 
-
+        }
         static BitmapImage Convert(byte[] byteArray)
         {
             var image = new BitmapImage();
@@ -91,11 +125,12 @@ namespace ClientSideWpf
         {
             if (txtbox_enterance is null)
                 return;
-            await client.SendAsync(Encoding.UTF8.GetBytes(txtbox_enterance.Text), remoteep);
+            await client.SendAsync(Encoding.UTF8.GetBytes(txtbox_enterance.Text), txtbox_enterance.Text.Length, remoteep);
             mainPanel.Visibility = Visibility.Visible;
             enterancePanel.Visibility = Visibility.Hidden;
+
         }
-       
+
 
 
     }

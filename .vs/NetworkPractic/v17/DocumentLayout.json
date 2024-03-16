@@ -1,0 +1,111 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\screeeSharing\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{75B80543-9A9A-4A91-A189-FAF09C73325C}|ServerAppConsole\\ServerAppConsole.csproj|c:\\users\\user\\desktop\\screeesharing\\serverappconsole\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{75B80543-9A9A-4A91-A189-FAF09C73325C}|ServerAppConsole\\ServerAppConsole.csproj|solutionrelative:serverappconsole\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EDBE520-A9BE-434D-A506-9979911669E0}|ClientSideWpf\\ClientSideWpf.csproj|c:\\users\\user\\desktop\\screeesharing\\clientsidewpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EDBE520-A9BE-434D-A506-9979911669E0}|ClientSideWpf\\ClientSideWpf.csproj|solutionrelative:clientsidewpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EDBE520-A9BE-434D-A506-9979911669E0}|ClientSideWpf\\ClientSideWpf.csproj|c:\\users\\user\\desktop\\screeesharing\\clientsidewpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{3EDBE520-A9BE-434D-A506-9979911669E0}|ClientSideWpf\\ClientSideWpf.csproj|solutionrelative:clientsidewpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EDBE520-A9BE-434D-A506-9979911669E0}|ClientSideWpf\\ClientSideWpf.csproj|c:\\users\\user\\desktop\\screeesharing\\clientsidewpf\\clientsidewpf.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3EDBE520-A9BE-434D-A506-9979911669E0}|ClientSideWpf\\ClientSideWpf.csproj|solutionrelative:clientsidewpf\\clientsidewpf.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\screeeSharing\\ClientSideWpf\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "ClientSideWpf\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\screeeSharing\\ClientSideWpf\\MainWindow.xaml",
+              "RelativeToolTip": "ClientSideWpf\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-16T07:34:04.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ClientSideWpf",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\screeeSharing\\ClientSideWpf\\ClientSideWpf.csproj",
+              "RelativeDocumentMoniker": "ClientSideWpf\\ClientSideWpf.csproj",
+              "ToolTip": "C:\\Users\\user\\Desktop\\screeeSharing\\ClientSideWpf\\ClientSideWpf.csproj",
+              "RelativeToolTip": "ClientSideWpf\\ClientSideWpf.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-03-16T07:33:43.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\screeeSharing\\ClientSideWpf\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "ClientSideWpf\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\screeeSharing\\ClientSideWpf\\MainWindow.xaml.cs",
+              "RelativeToolTip": "ClientSideWpf\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAGEAAAAAAAAAAAAYwIgAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-16T06:35:59.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\screeeSharing\\ServerAppConsole\\Program.cs",
+              "RelativeDocumentMoniker": "ServerAppConsole\\Program.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\screeeSharing\\ServerAppConsole\\Program.cs",
+              "RelativeToolTip": "ServerAppConsole\\Program.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAAFYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-16T06:35:50.915Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

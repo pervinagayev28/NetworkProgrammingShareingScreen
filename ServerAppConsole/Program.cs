@@ -1,142 +1,142 @@
 ﻿
+
 using System;
+
 using System.Collections;
+
 using System.Collections.Generic;
+
 using System.Drawing;
+
 using System.Drawing.Imaging;
+
 using System.Linq;
+
 using System.Net;
+
 using System.Net.Http.Headers;
+
 using System.Net.Sockets;
+
 using System.Text;
+
 using System.Windows.Forms;
-IPEndPoint endpoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 27000);
+
+IPEndPoint endpoint = new IPEndPoint(IPAddress.Parse("192.168.100.15"), 45001);
+
 var server = new UdpClient(endpoint);
+
 EndPoint remoteEP = new IPEndPoint(IPAddress.Any, 0);
+
 var buffer = new byte[ushort.MaxValue - 29];
 
 var clients = new List<User>();
 
 
-
 while (true)
+
 {
-    new Task(async () =>
+
+    UdpReceiveResult resultClient = await server.ReceiveAsync();
+    Console.Write("FIRST ENTERACNE: ");
+    Console.WriteLine(resultClient.RemoteEndPoint);
+
+    new Thread(async () =>
+
     {
-        UdpReceiveResult resultClient = await server.ReceiveAsync();
-        var clientEP = resultClient.RemoteEndPoint;
-        var user = clients.FirstOrDefault(c => c.client == clientEP);
+
+        var client = resultClient.RemoteEndPoint;
+        var buffer = resultClient.Buffer;
+
+        var user = clients.FirstOrDefault(c => c.client == client);
+
         if (user is null)
+
         {
-            await server.SendAsync(Encoding.UTF8.GetBytes("enter your name please: "), clientEP);
-            var dataGram = await server.ReceiveAsync();
 
             user = new()
             {
-                UserName = Encoding.UTF8.GetString(dataGram.Buffer),
-                client = clientEP
+                UserName = Encoding.UTF8.GetString(buffer),
+                client = client
             };
+
             clients.Add(user);
+
         }
+
         while (true)
+
         {
-            var dataGram = await server.ReceiveAsync();
-            IPEndPoint? client = clients.FirstOrDefault(c => Encoding.UTF8.GetString(dataGram.Buffer).Contains(c.UserName))?.client;
+            await Console.Out.WriteLineAsync("STARTED WHILE LINE 70");
+            var remoteName = server.Receive(ref client);
+            await Console.Out.WriteAsync($"from name: {user.UserName}    =>   ");
+            await Console.Out.WriteLineAsync($"to name: {Encoding.UTF8.GetString(remoteName)}");
+            IPEndPoint? clientEp = clients.FirstOrDefault(c => Encoding.UTF8.GetString(remoteName).Contains(c.UserName))?.client;
+
             new Thread(async () =>
             {
-                if (client is not null)
+                if (true)
                 {
-                    var imgStream = captureScreenAsync();
-                    var chunks = imgStream.ToArray().Chunk(ushort.MaxValue - 29).ToList();
-                    foreach (var item in chunks)
-                        try { await server.SendAsync(item, item.Length, clientEP); } catch { break; };
+                    await Console.Out.WriteLineAsync("entered: " + clientEp);
+                    var tempBuffer = new byte[ushort.MaxValue - 29];
+                    int maxlen = buffer.Length;
+                    int len = 0;
+                    while (true)
+                    {
+                        await Console.Out.WriteLineAsync("sending");
+
+                        try
+                        {
+                            do
+                            {
+                                var result = server.Receive(ref client);
+                                await Console.Out.WriteLineAsync("CHUNKS");
+                                tempBuffer = result;
+                                len = tempBuffer.Length;
+                                await Console.Out.WriteLineAsync("lrn: " + len.ToString());
+                                try { await server.SendAsync(tempBuffer, tempBuffer.Length, client); } catch { await Console.Out.WriteLineAsync("error"); };
+                            } while (len == maxlen);
+
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message);
+                        }
+                    }
+
+
                 }
             }).Start();
 
         }
+
     }).Start();
 
 }
 
 
-
-
 MemoryStream? captureScreenAsync()
+
 {
+
     using (Bitmap? bitmap = new Bitmap(1920, 1080))
+
     {
+
         using (Graphics gr = Graphics.FromImage(bitmap))
+
             gr?.CopyFromScreen(0, 0, 0, 0, new Size(1920, 1080));
+
         using (MemoryStream memoryStream = new MemoryStream())
+
         {
+
             bitmap?.Save(memoryStream, ImageFormat.Jpeg);
+
             return memoryStream;
+
         }
+
     }
 
 }
-
-
-
-
-// Server Side => TcpListener
-
-//var ip = IPAddress.Parse("127.0.0.1");
-//var port = 27001;
-
-
-//var listenerEP = new IPEndPoint(ip, port);
-//BinaryReader br;
-//BinaryWriter bw;
-
-//var listener = new TcpListener(listenerEP);
-//listener.Start();
-
-//Console.WriteLine($"{listener.Server.LocalEndPoint}  Listener Started .....");
-
-
-//var clients = new List<User>();
-
-//while (true)
-//{
-//    TcpClient client = listener.AcceptTcpClient();
-//    _ = Task.Run(() =>
-//    {
-//        br = new(client.GetStream());
-//var user = clients.firstordefault(c => c.client.client?.remoteendpoint == client.client.remoteendpoint);
-//if (user is null)
-//{
-//    bw = new(client.getstream());
-//    bw.write("enter your name please: ");
-//    var username = br.readstring();
-//    user = new()
-//    {
-//        username = username,
-//        client = client
-//    };
-//    clients.add(user);
-//}
-
-//        Console.WriteLine(user?.UserName + " connected...");
-
-//        var clientStream = client.GetStream();
-//        var reader = new BinaryReader(clientStream);
-
-
-//        var readString = "";
-//        var userIpEndPoint = "";
-//        var index = 0;
-
-
-//        while (true)
-//        {
-//            readString = reader.ReadString();//Name
-//            TcpClient? client = clients.FirstOrDefault(c => readString.Contains(c.UserName))?.client;
-//            if (client is not null)
-//            {
-//                var writer = new BinaryWriter(client.GetStream());
-//                writer.Write(readString.Substring(readString.IndexOf(" ") + 1));
-//            }
-//        }
-//    });
-//}
